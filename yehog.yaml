@@ -4,9 +4,19 @@ bind-address: '*'
 mode: rule
 log-level: info
 external-controller: '127.0.0.1:9090'
+dns:
+    enable: true
+    default-nameserver: [223.5.5.5, 223.6.6.6]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - { name: 'QQ448829498', type: trojan, server: bgp.xn--qprx60h.xyz, port: 33011, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
-    - { name: '到期:2025-07-06;剩余:47.11 GB', type: trojan, server: bgp.xn--qprx60h.xyz, port: 33011, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
+    - { name: '25566;QQ448829498', type: trojan, server: bgp.xn--qprx60h.xyz, port: 33011, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
+    - { name: '到期:2025-07-06;剩余:31.77 GB', type: trojan, server: bgp.xn--qprx60h.xyz, port: 33011, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
+    - { name: '距离下次重置剩余:23 天', type: trojan, server: bgp.xn--qprx60h.xyz, port: 33011, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
     - { name: 香港01|BGP|EIP, type: trojan, server: bgp.xn--qprx60h.xyz, port: 33011, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
     - { name: 香港02|BGP|EIP, type: trojan, server: bgp.xn--qprx60h.xyz, port: 33012, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
     - { name: 香港03|BGP|EIP, type: trojan, server: bgp.xn--qprx60h.xyz, port: 33013, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
@@ -29,15 +39,15 @@ proxies:
     - { name: 美国04|BGP|EIP, type: trojan, server: bgp.xn--qprx60h.xyz, port: 33054, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
     - { name: 韩国01|BGP|EIP, type: trojan, server: bgp.xn--qprx60h.xyz, port: 33061, password: fd4911db-fc9f-49b4-8aa3-0b5516640b8d, udp: true, sni: cn.bing.com, skip-cert-verify: true }
 proxy-groups:
-    - { name: '🚀 节点选择', type: select, proxies: ['🔯 故障转移', '🚄 高速公网', 'QQ448829498', '到期:2025-07-06;剩余:47.11 GB', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
-    - { name: '🔯 故障转移', type: fallback, proxies: [香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP], url: 'http://www.gstatic.com/generate_204', interval: 300 }
-    - { name: '🚄 高速公网', type: url-test, proxies: [香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP], url: 'http://www.gstatic.com/generate_204', interval: 300 }
-    - { name: '📺 巴哈姆特', type: select, proxies: ['🚀 节点选择', 'QQ448829498', '到期:2025-07-06;剩余:47.11 GB', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
-    - { name: '🎙 Discord', type: select, proxies: ['🚀 节点选择', 'QQ448829498', '到期:2025-07-06;剩余:47.11 GB', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
-    - { name: '📘 Facebook', type: select, proxies: ['🚀 节点选择', 'QQ448829498', '到期:2025-07-06;剩余:47.11 GB', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
-    - { name: '🌍 国外媒体', type: select, proxies: ['🚀 节点选择', 'QQ448829498', '到期:2025-07-06;剩余:47.11 GB', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
-    - { name: '📲 电报信息', type: select, proxies: ['🚀 节点选择', 'QQ448829498', '到期:2025-07-06;剩余:47.11 GB', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
-    - { name: '🍎 苹果服务', type: select, proxies: ['🚀 节点选择', DIRECT, 'QQ448829498', '到期:2025-07-06;剩余:47.11 GB', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
+    - { name: '🚀 节点选择', type: select, proxies: ['🔯 故障转移', '🚄 高速公网', '25566;QQ448829498', '到期:2025-07-06;剩余:31.77 GB', '距离下次重置剩余:23 天', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
+    - { name: '🔯 故障转移', type: fallback, proxies: [香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP], url: 'http://google.com', interval: 300 }
+    - { name: '🚄 高速公网', type: url-test, proxies: [香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP], url: 'http://google.com', interval: 300 }
+    - { name: '📺 巴哈姆特', type: select, proxies: ['🚀 节点选择', '25566;QQ448829498', '到期:2025-07-06;剩余:31.77 GB', '距离下次重置剩余:23 天', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
+    - { name: '🎙 Discord', type: select, proxies: ['🚀 节点选择', '25566;QQ448829498', '到期:2025-07-06;剩余:31.77 GB', '距离下次重置剩余:23 天', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
+    - { name: '📘 Facebook', type: select, proxies: ['🚀 节点选择', '25566;QQ448829498', '到期:2025-07-06;剩余:31.77 GB', '距离下次重置剩余:23 天', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
+    - { name: '🌍 国外媒体', type: select, proxies: ['🚀 节点选择', '25566;QQ448829498', '到期:2025-07-06;剩余:31.77 GB', '距离下次重置剩余:23 天', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
+    - { name: '📲 电报信息', type: select, proxies: ['🚀 节点选择', '25566;QQ448829498', '到期:2025-07-06;剩余:31.77 GB', '距离下次重置剩余:23 天', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
+    - { name: '🍎 苹果服务', type: select, proxies: ['🚀 节点选择', DIRECT, '25566;QQ448829498', '到期:2025-07-06;剩余:31.77 GB', '距离下次重置剩余:23 天', 香港01|BGP|EIP, 香港02|BGP|EIP, 香港03|BGP|EIP, 香港04|BGP|EIP, 台湾01|BGP|EIP, 台湾02|BGP|EIP, 台湾03|BGP|EIP, 台湾04|BGP|EIP, 新加坡01|BGP|EIP, 新加坡02|BGP|EIP, 新加坡03|BGP|EIP, 新加坡04|BGP|EIP, 日本01|BGP|EIP, 日本02|BGP|EIP, 日本03|BGP|EIP, 日本04|BGP|EIP, 美国01|BGP|EIP, 美国02|BGP|EIP, 美国03|BGP|EIP, 美国04|BGP|EIP, 韩国01|BGP|EIP] }
 rules:
     - 'DOMAIN,api.redleaf.cloud,DIRECT'
     - 'DOMAIN-KEYWORD,dns,🚀 节点选择'
@@ -46,9 +56,9 @@ rules:
     - 'DOMAIN-KEYWORD,astrill,🚀 节点选择'
     - 'DOMAIN-KEYWORD,who,🚀 节点选择'
     - 'DOMAIN-KEYWORD,vpn,🚀 节点选择'
-    - 'DOMAIN-KEYWORD,surf,🚀 节点选择'
-    - 'DOMAIN-KEYWORD,scan,🚀 节点选择'
-    - 'DOMAIN-KEYWORD,ping,🚀 节点选择'
+    - 'DOMAIN-SUFFIX,gstatic.com,🚀 节点选择'
+    - 'DOMAIN-SUFFIX,services.googleapis.cn,🚀 节点选择'
+    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🚀 节点选择'
     - 'DOMAIN,bahamut.akamaized.net,📺 巴哈姆特'
     - 'DOMAIN,gamer-cds.cdn.hinet.net,📺 巴哈姆特'
     - 'DOMAIN,gamer2-cds.cdn.hinet.net,📺 巴哈姆特'
@@ -432,20 +442,12 @@ rules:
     - 'DOMAIN-SUFFIX,telegram.me,📲 电报信息'
     - 'DOMAIN-SUFFIX,telegram.org,📲 电报信息'
     - 'DOMAIN-SUFFIX,telesco.pe,📲 电报信息'
-    - 'IP-CIDR,91.108.56.0/22,📲 电报信息,no-resolve'
-    - 'IP-CIDR,91.108.4.0/22,📲 电报信息,no-resolve'
-    - 'IP-CIDR,91.108.8.0/22,📲 电报信息,no-resolve'
-    - 'IP-CIDR,91.108.16.0/22,📲 电报信息,no-resolve'
-    - 'IP-CIDR,91.108.12.0/22,📲 电报信息,no-resolve'
+    - 'IP-CIDR,91.108.0.0/16,📲 电报信息,no-resolve'
+    - 'IP-CIDR,109.239.140.0/24,📲 电报信息,no-resolve'
     - 'IP-CIDR,149.154.160.0/20,📲 电报信息,no-resolve'
-    - 'IP-CIDR,91.105.192.0/23,📲 电报信息,no-resolve'
-    - 'IP-CIDR,91.108.20.0/22,📲 电报信息,no-resolve'
-    - 'IP-CIDR,185.76.151.0/24,📲 电报信息,no-resolve'
+    - 'IP-CIDR6,2001:67c:4e8::/48,📲 电报信息,no-resolve'
     - 'IP-CIDR6,2001:b28:f23d::/48,📲 电报信息,no-resolve'
     - 'IP-CIDR6,2001:b28:f23f::/48,📲 电报信息,no-resolve'
-    - 'IP-CIDR6,2001:67c:4e8::/48,📲 电报信息,no-resolve'
-    - 'IP-CIDR6,2001:b28:f23c::/48,📲 电报信息,no-resolve'
-    - 'IP-CIDR6,2a0a:f280::/32,📲 电报信息,no-resolve'
     - 'DOMAIN,apple.comscoreresearch.com,🍎 苹果服务'
     - 'DOMAIN-SUFFIX,aaplimg.com,🍎 苹果服务'
     - 'DOMAIN-SUFFIX,akadns.net,🍎 苹果服务'
@@ -475,24 +477,18 @@ rules:
     - 'IP-CIDR,192.35.50.0/24,🍎 苹果服务,no-resolve'
     - 'IP-CIDR,198.183.17.0/24,🍎 苹果服务,no-resolve'
     - 'IP-CIDR,205.180.175.0/24,🍎 苹果服务,no-resolve'
-    - 'PROCESS-NAME,tailsacle.exe,DIRECT'
-    - 'PROCESS-NAME,tailsacled.exe,DIRECT'
+    - 'PROCESS-NAME,tailscaled.exe,DIRECT'
     - 'PROCESS-NAME,easytier-core.exe,DIRECT'
-    - 'DOMAIN-SUFFIX,ip6-localhost,DIRECT'
-    - 'DOMAIN-SUFFIX,ip6-loopback,DIRECT'
-    - 'DOMAIN-SUFFIX,lan,DIRECT'
+    - 'DOMAIN,injections.adguard.org,DIRECT'
+    - 'DOMAIN,local.adguard.org,DIRECT'
     - 'DOMAIN-SUFFIX,local,DIRECT'
-    - 'DOMAIN-SUFFIX,localhost,DIRECT'
-    - 'IP-CIDR,0.0.0.0/8,DIRECT,no-resolve'
-    - 'IP-CIDR,100.64.0.0/10,DIRECT,no-resolve'
-    - 'IP-CIDR,127.0.0.0/8,DIRECT,no-resolve'
-    - 'IP-CIDR,172.16.0.0/12,DIRECT,no-resolve'
-    - 'IP-CIDR,192.168.0.0/16,DIRECT,no-resolve'
-    - 'IP-CIDR,198.18.0.0/16,DIRECT,no-resolve'
-    - 'IP-CIDR,224.0.0.0/4,DIRECT,no-resolve'
-    - 'IP-CIDR6,::1/128,DIRECT,no-resolve'
-    - 'IP-CIDR6,fc00::/7,DIRECT,no-resolve'
-    - 'IP-CIDR6,fe80::/10,DIRECT,no-resolve'
-    - 'IP-CIDR6,fd00::/8,DIRECT,no-resolve'
+    - 'IP-CIDR,127.0.0.0/8,DIRECT'
+    - 'IP-CIDR,172.16.0.0/12,DIRECT'
+    - 'IP-CIDR,192.168.0.0/16,DIRECT'
+    - 'IP-CIDR,10.0.0.0/8,DIRECT'
+    - 'IP-CIDR,17.0.0.0/8,DIRECT'
+    - 'IP-CIDR,100.64.0.0/10,DIRECT'
+    - 'IP-CIDR,224.0.0.0/4,DIRECT'
+    - 'IP-CIDR6,fe80::/10,DIRECT'
     - 'GEOIP,CN,DIRECT'
     - 'MATCH,🚀 节点选择'
