@@ -6,38 +6,35 @@ log-level: info
 external-controller: '127.0.0.1:9090'
 dns:
     enable: true
-    listen: ':53'
     ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
-    fake-ip-filter: ['*.lan', '*.local', '*.arpa', 'time.*.com', 'ntp.*.com', 'time.*.com', +.market.xiaomi.com, localhost.ptlogin2.qq.com, '*.msftncsi.com', www.msftconnecttest.com]
-    use-hosts: false
-    default-nameserver: [system, 223.6.6.6, 8.8.8.8]
-    nameserver: [8.8.8.8, 'https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
-    fallback: ['https://dns.alidns.com/dns-query', 'https://dns.google/dns-query', 'https://cloudflare-dns.com/dns-query']
-    fallback-filter: { geoip: true, geoip-code: CN, ipcidr: [240.0.0.0/4, 0.0.0.0/32], domain: [+.google.com, +.facebook.com, +.youtube.com] }
-    proxy-server-nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query', 'tls://223.5.5.5']
-    direct-nameserver: [system, 223.6.6.6]
+    use-hosts: true
+    respect-rules: true
+    proxy-server-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
+    nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
+    fallback: [1.1.1.1, 8.8.8.8]
+    fallback-filter: { geoip: true, geoip-code: CN, geosite: [gfw], ipcidr: [240.0.0.0/4], domain: [+.google.com, +.facebook.com, +.youtube.com] }
 proxies:
-    - { name: '剩余流量：500G', server: jp.wendingjichang.com, port: 54448, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: '距离下次重置剩余：23 天', server: jp.wendingjichang.com, port: 54448, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 套餐到期：2025-06-23, server: jp.wendingjichang.com, port: 54448, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 日本1, server: jp.wendingjichang.com, port: 54448, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 日本2, server: jp.wendingjichang.com, port: 54423, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 新加坡1, server: sg.wendingjichang.com, port: 56093, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 新加坡2, server: sg.wendingjichang.com, port: 53422, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 印度1, server: in.wendingjichang.com, port: 59741, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 印度2, server: in.wendingjichang.com, port: 52569, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 美国1, server: us.wendingjichang.com, port: 59674, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 美国2, server: us.wendingjichang.com, port: 50667, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 德国1, server: de.wendingjichang.com, port: 58661, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
-    - { name: 德国2, server: de.wendingjichang.com, port: 55055, sni: null, up: null, down: null, skip-cert-verify: false, ports: 50001-59999, type: hysteria2, password: 2ab8107d-f9f9-4197-89ce-933ed2be807a }
+    - { name: '剩余流量：600 GB', server: yjjdels.yunjijd.xyz, port: 26123, udp: true, skip-cert-verify: true, sni: yjjdels.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 套餐到期：2025-08-01, server: yjjdels.yunjijd.xyz, port: 26123, udp: true, skip-cert-verify: true, sni: yjjdels.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 俄罗斯, server: yjjdels.yunjijd.xyz, port: 26123, udp: true, skip-cert-verify: true, sni: yjjdels.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 美国, server: yjjdmg.yunjijd.xyz, port: 26223, udp: true, skip-cert-verify: true, sni: yjjdmg.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 香港, server: yjjdxg.yunjijd.xyz, port: 26323, udp: true, skip-cert-verify: true, sni: yjjdxg.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 日本, server: yjjdrb.yunjijd.xyz, port: 26423, udp: true, skip-cert-verify: true, sni: yjjdrb.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 加拿大, server: yjjdjnd.yunjijd.xyz, port: 26523, udp: true, skip-cert-verify: true, sni: yjjdjnd.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 冰岛, server: yjjdbd.yunjijd.xyz, port: 26623, udp: true, skip-cert-verify: true, sni: yjjdbd.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 韩国, server: yjjdhg.yunjijd.xyz, port: 26723, udp: true, skip-cert-verify: true, sni: yjjdhg.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 德国, server: yjjddg.yunjijd.xyz, port: 26823, udp: true, skip-cert-verify: true, sni: yjjddg.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
+    - { name: 荷兰, server: yjjdhl.yunjijd.xyz, port: 26923, udp: true, skip-cert-verify: true, sni: yjjdhl.yunjijd.xyz, type: hysteria2, password: 2721f3fd-1442-42c6-b0a5-6dc10aa98bbd }
 proxy-groups:
-    - { name: QQ448829498, type: select, proxies: [自动选择, 故障转移, '剩余流量：500G', '距离下次重置剩余：23 天', 套餐到期：2025-06-23, 日本1, 日本2, 新加坡1, 新加坡2, 印度1, 印度2, 美国1, 美国2, 德国1, 德国2] }
-    - { name: 自动选择, type: url-test, proxies: ['剩余流量：500G', '距离下次重置剩余：23 天', 套餐到期：2025-06-23, 日本1, 日本2, 新加坡1, 新加坡2, 印度1, 印度2, 美国1, 美国2, 德国1, 德国2], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: 故障转移, type: fallback, proxies: ['剩余流量：500G', '距离下次重置剩余：23 天', 套餐到期：2025-06-23, 日本1, 日本2, 新加坡1, 新加坡2, 印度1, 印度2, 美国1, 美国2, 德国1, 德国2], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: QQ448829498, type: select, proxies: [自动选择, 故障转移, '剩余流量：600 GB', 套餐到期：2025-08-01, 俄罗斯, 美国, 香港, 日本, 加拿大, 冰岛, 韩国, 德国, 荷兰] }
+    - { name: 自动选择, type: url-test, proxies: ['剩余流量：600 GB', 套餐到期：2025-08-01, 俄罗斯, 美国, 香港, 日本, 加拿大, 冰岛, 韩国, 德国, 荷兰], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 故障转移, type: fallback, proxies: ['剩余流量：600 GB', 套餐到期：2025-08-01, 俄罗斯, 美国, 香港, 日本, 加拿大, 冰岛, 韩国, 德国, 荷兰], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
-    - 'DOMAIN,45.61.52.132:8001,DIRECT'
+    - 'IP-CIDR,1.1.1.1/32,QQ448829498,no-resolve'
+    - 'IP-CIDR,8.8.8.8/32,QQ448829498,no-resolve'
     - 'DOMAIN-SUFFIX,services.googleapis.cn,QQ448829498'
     - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,QQ448829498'
     - 'DOMAIN,safebrowsing.urlsec.qq.com,DIRECT'
@@ -72,6 +69,7 @@ rules:
     - 'DOMAIN-SUFFIX,apple.com,DIRECT'
     - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
     - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
+    - 'DOMAIN,cn.bing.com,DIRECT'
     - 'DOMAIN-SUFFIX,126.com,DIRECT'
     - 'DOMAIN-SUFFIX,126.net,DIRECT'
     - 'DOMAIN-SUFFIX,127.net,DIRECT'
@@ -430,7 +428,7 @@ rules:
     - 'DOMAIN-SUFFIX,sharethis.com,QQ448829498'
     - 'DOMAIN-SUFFIX,shazam.com,QQ448829498'
     - 'DOMAIN-SUFFIX,skype.com,QQ448829498'
-    - 'DOMAIN-SUFFIX,smartdnsQQ448829498.com,QQ448829498'
+    - 'DOMAIN-SUFFIX,smartdns云际节点.com,QQ448829498'
     - 'DOMAIN-SUFFIX,smartmailcloud.com,QQ448829498'
     - 'DOMAIN-SUFFIX,sndcdn.com,QQ448829498'
     - 'DOMAIN-SUFFIX,sony.com,QQ448829498'
