@@ -31,24 +31,24 @@ proxy-groups:
     - { name: 故障转移, type: fallback, proxies: [日本节点, Youtube专线, 游戏节点, 视频节点, 美国节点（备用）, 不能用请刷新或重新导入, Tiktok专线, 美国节点, 台湾中转亚洲, 厦门中转东京], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
     - 'DOMAIN,   ,DIRECT'
-    - 'DOMAIN-SUFFIX,services.googleapis.cn,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,QQ448829498：   '
+    - 'DOMAIN-SUFFIX,services.googleapis.cn,QQ448829498   
+    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,QQ448829498   
     - 'DOMAIN,safebrowsing.urlsec.qq.com,DIRECT'
     - 'DOMAIN,safebrowsing.googleapis.com,DIRECT'
-    - 'DOMAIN,developer.apple.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,digicert.com,QQ448829498：   '
-    - 'DOMAIN,ocsp.apple.com,QQ448829498：   '
-    - 'DOMAIN,ocsp.comodoca.com,QQ448829498：   '
-    - 'DOMAIN,ocsp.usertrust.com,QQ448829498：   '
-    - 'DOMAIN,ocsp.sectigo.com,QQ448829498：   '
-    - 'DOMAIN,ocsp.verisign.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,apple-dns.net,QQ448829498：   '
-    - 'DOMAIN,testflight.apple.com,QQ448829498：   '
-    - 'DOMAIN,sandbox.itunes.apple.com,QQ448829498：   '
-    - 'DOMAIN,itunes.apple.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,apps.apple.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,blobstore.apple.com,QQ448829498：   '
-    - 'DOMAIN,cvws.icloud-content.com,QQ448829498：   '
+    - 'DOMAIN,developer.apple.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,digicert.com,QQ448829498   
+    - 'DOMAIN,ocsp.apple.com,QQ448829498   
+    - 'DOMAIN,ocsp.comodoca.com,QQ448829498   
+    - 'DOMAIN,ocsp.usertrust.com,QQ448829498   
+    - 'DOMAIN,ocsp.sectigo.com,QQ448829498   
+    - 'DOMAIN,ocsp.verisign.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,apple-dns.net,QQ448829498   
+    - 'DOMAIN,testflight.apple.com,QQ448829498   
+    - 'DOMAIN,sandbox.itunes.apple.com,QQ448829498   
+    - 'DOMAIN,itunes.apple.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,apps.apple.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,blobstore.apple.com,QQ448829498   
+    - 'DOMAIN,cvws.icloud-content.com,QQ448829498   
     - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
     - 'DOMAIN-SUFFIX,itunes.apple.com,DIRECT'
     - 'DOMAIN-SUFFIX,icloud.com,DIRECT'
@@ -190,20 +190,20 @@ rules:
     - 'DOMAIN-SUFFIX,zhimg.com,DIRECT'
     - 'DOMAIN-SUFFIX,zimuzu.tv,DIRECT'
     - 'DOMAIN-SUFFIX,zoho.com,DIRECT'
-    - 'DOMAIN-KEYWORD,amazon,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,google,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,gmail,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,youtube,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,facebook,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,fb.me,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,fbcdn.net,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,twitter,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,instagram,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,dropbox,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,twimg.com,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,blogspot,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,youtu.be,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,whatsapp,QQ448829498：   '
+    - 'DOMAIN-KEYWORD,amazon,QQ448829498   
+    - 'DOMAIN-KEYWORD,google,QQ448829498   
+    - 'DOMAIN-KEYWORD,gmail,QQ448829498   
+    - 'DOMAIN-KEYWORD,youtube,QQ448829498   
+    - 'DOMAIN-KEYWORD,facebook,QQ448829498   
+    - 'DOMAIN-SUFFIX,fb.me,QQ448829498   
+    - 'DOMAIN-SUFFIX,fbcdn.net,QQ448829498   
+    - 'DOMAIN-KEYWORD,twitter,QQ448829498   
+    - 'DOMAIN-KEYWORD,instagram,QQ448829498   
+    - 'DOMAIN-KEYWORD,dropbox,QQ448829498   
+    - 'DOMAIN-SUFFIX,twimg.com,QQ448829498   
+    - 'DOMAIN-KEYWORD,blogspot,QQ448829498   
+    - 'DOMAIN-SUFFIX,youtu.be,QQ448829498   
+    - 'DOMAIN-KEYWORD,whatsapp,QQ448829498   
     - 'DOMAIN-KEYWORD,admarvel,REJECT'
     - 'DOMAIN-KEYWORD,admaster,REJECT'
     - 'DOMAIN-KEYWORD,adsage,REJECT'
@@ -231,278 +231,278 @@ rules:
     - 'DOMAIN-SUFFIX,vungle.com,REJECT'
     - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
     - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
-    - 'DOMAIN-SUFFIX,9to5mac.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,abpchina.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,adblockplus.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,adobe.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,akamaized.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,alfredapp.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,amplitude.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ampproject.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,android.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,angularjs.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,aolcdn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,apkpure.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,appledaily.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,appshopper.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,appspot.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,arcgis.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,archive.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,armorgames.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,aspnetcdn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,att.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,awsstatic.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,azureedge.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,azurewebsites.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bing.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bintray.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bit.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bit.ly,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bitbucket.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bjango.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bkrtx.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,blog.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,blogcdn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,blogger.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,blogsmithmedia.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,blogspot.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,blogspot.hk,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,bloomberg.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,box.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,box.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cachefly.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,chromium.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cl.ly,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cloudflare.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cloudfront.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cloudmagic.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cmail19.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cnet.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,cocoapods.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,comodoca.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,crashlytics.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,culturedcode.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,d.pr,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,danilo.to,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,dayone.me,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,db.tt,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,deskconnect.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,disq.us,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,disqus.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,disquscdn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,dnsimple.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,docker.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,dribbble.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,droplr.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,duckduckgo.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,dueapp.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,dytt8.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,edgecastcdn.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,edgekey.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,edgesuite.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,engadget.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,entrust.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,eurekavpt.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,evernote.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,fabric.io,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,fast.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,fastly.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,fc2.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,feedburner.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,feedly.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,feedsportal.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,fiftythree.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,firebaseio.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,flexibits.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,flickr.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,flipboard.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,g.co,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,gabia.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,geni.us,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,gfx.ms,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ggpht.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ghostnoteapp.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,git.io,QQ448829498：   '
-    - 'DOMAIN-KEYWORD,github,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,globalsign.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,gmodules.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,godaddy.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,golang.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,gongm.in,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,goo.gl,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,goodreaders.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,goodreads.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,gravatar.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,gstatic.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,gvt0.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,hockeyapp.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,hotmail.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,icons8.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ifixit.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ift.tt,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ifttt.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,iherb.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,imageshack.us,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,img.ly,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,imgur.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,imore.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,instapaper.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ipn.li,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,is.gd,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,issuu.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,itgonglun.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,itun.es,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ixquick.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,j.mp,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,js.revsci.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,jshint.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,jtvnw.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,justgetflux.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,kat.cr,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,klip.me,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,libsyn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,linkedin.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,line-apps.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,linode.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,lithium.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,littlehj.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,live.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,live.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,livefilestore.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,llnwd.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,macid.co,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,macromedia.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,macrumors.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,mashable.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,mathjax.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,medium.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,mega.co.nz,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,mega.nz,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,megaupload.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,microsofttranslator.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,mindnode.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,mobile01.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,modmyi.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,msedge.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,myfontastic.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,name.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,nextmedia.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,nsstatic.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,nssurge.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,nyt.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,nytimes.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,omnigroup.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,onedrive.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,onenote.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ooyala.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,openvpn.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,openwrt.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,orkut.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,osxdaily.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,outlook.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ow.ly,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,paddleapi.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,parallels.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,parse.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,pdfexpert.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,periscope.tv,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,pinboard.in,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,pinterest.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,pixelmator.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,pixiv.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,playpcesor.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,playstation.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,playstation.com.hk,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,playstation.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,playstationnetwork.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,pushwoosh.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,rime.im,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,servebom.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,sfx.ms,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,shadowsocks.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,sharethis.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,shazam.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,skype.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,smartdns好梯子：   .com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,smartmailcloud.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,sndcdn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,sony.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,soundcloud.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,sourceforge.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,spotify.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,squarespace.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,sstatic.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,st.luluku.pw,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,stackoverflow.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,startpage.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,staticflickr.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,steamcommunity.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,symauth.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,symcb.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,symcd.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tapbots.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tapbots.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tdesktop.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,techcrunch.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,techsmith.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,thepiratebay.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,theverge.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,time.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,timeinc.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tiny.cc,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tinypic.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tmblr.co,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,todoist.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,trello.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,trustasiassl.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tumblr.co,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tumblr.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tweetdeck.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,tweetmarker.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,twitch.tv,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,txmblr.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,typekit.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ubertags.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ublock.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ubnt.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ulyssesapp.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,urchin.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,usertrust.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,v.gd,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,v2ex.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,vimeo.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,vimeocdn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,vine.co,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,vivaldi.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,vox-cdn.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,vsco.co,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,vultr.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,w.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,w3schools.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,webtype.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wikiwand.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wikileaks.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wikimedia.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wikipedia.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wikipedia.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,windows.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,windows.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wire.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wordpress.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,workflowy.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wp.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wsj.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,wsj.net,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,xda-developers.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,xeeno.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,xiti.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,yahoo.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,yimg.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ying.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,yoyo.org,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,ytimg.com,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,telegra.ph,QQ448829498：   '
-    - 'DOMAIN-SUFFIX,telegram.org,QQ448829498：   '
+    - 'DOMAIN-SUFFIX,9to5mac.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,abpchina.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,adblockplus.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,adobe.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,akamaized.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,alfredapp.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,amplitude.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ampproject.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,android.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,angularjs.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,aolcdn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,apkpure.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,appledaily.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,appshopper.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,appspot.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,arcgis.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,archive.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,armorgames.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,aspnetcdn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,att.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,awsstatic.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,azureedge.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,azurewebsites.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,bing.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,bintray.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,bit.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,bit.ly,QQ448829498   
+    - 'DOMAIN-SUFFIX,bitbucket.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,bjango.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,bkrtx.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,blog.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,blogcdn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,blogger.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,blogsmithmedia.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,blogspot.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,blogspot.hk,QQ448829498   
+    - 'DOMAIN-SUFFIX,bloomberg.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,box.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,box.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,cachefly.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,chromium.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,cl.ly,QQ448829498   
+    - 'DOMAIN-SUFFIX,cloudflare.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,cloudfront.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,cloudmagic.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,cmail19.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,cnet.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,cocoapods.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,comodoca.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,crashlytics.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,culturedcode.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,d.pr,QQ448829498   
+    - 'DOMAIN-SUFFIX,danilo.to,QQ448829498   
+    - 'DOMAIN-SUFFIX,dayone.me,QQ448829498   
+    - 'DOMAIN-SUFFIX,db.tt,QQ448829498   
+    - 'DOMAIN-SUFFIX,deskconnect.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,disq.us,QQ448829498   
+    - 'DOMAIN-SUFFIX,disqus.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,disquscdn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,dnsimple.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,docker.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,dribbble.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,droplr.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,duckduckgo.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,dueapp.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,dytt8.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,edgecastcdn.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,edgekey.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,edgesuite.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,engadget.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,entrust.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,eurekavpt.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,evernote.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,fabric.io,QQ448829498   
+    - 'DOMAIN-SUFFIX,fast.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,fastly.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,fc2.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,feedburner.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,feedly.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,feedsportal.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,fiftythree.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,firebaseio.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,flexibits.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,flickr.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,flipboard.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,g.co,QQ448829498   
+    - 'DOMAIN-SUFFIX,gabia.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,geni.us,QQ448829498   
+    - 'DOMAIN-SUFFIX,gfx.ms,QQ448829498   
+    - 'DOMAIN-SUFFIX,ggpht.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ghostnoteapp.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,git.io,QQ448829498   
+    - 'DOMAIN-KEYWORD,github,QQ448829498   
+    - 'DOMAIN-SUFFIX,globalsign.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,gmodules.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,godaddy.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,golang.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,gongm.in,QQ448829498   
+    - 'DOMAIN-SUFFIX,goo.gl,QQ448829498   
+    - 'DOMAIN-SUFFIX,goodreaders.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,goodreads.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,gravatar.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,gstatic.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,gvt0.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,hockeyapp.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,hotmail.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,icons8.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ifixit.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ift.tt,QQ448829498   
+    - 'DOMAIN-SUFFIX,ifttt.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,iherb.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,imageshack.us,QQ448829498   
+    - 'DOMAIN-SUFFIX,img.ly,QQ448829498   
+    - 'DOMAIN-SUFFIX,imgur.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,imore.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,instapaper.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ipn.li,QQ448829498   
+    - 'DOMAIN-SUFFIX,is.gd,QQ448829498   
+    - 'DOMAIN-SUFFIX,issuu.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,itgonglun.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,itun.es,QQ448829498   
+    - 'DOMAIN-SUFFIX,ixquick.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,j.mp,QQ448829498   
+    - 'DOMAIN-SUFFIX,js.revsci.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,jshint.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,jtvnw.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,justgetflux.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,kat.cr,QQ448829498   
+    - 'DOMAIN-SUFFIX,klip.me,QQ448829498   
+    - 'DOMAIN-SUFFIX,libsyn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,linkedin.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,line-apps.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,linode.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,lithium.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,littlehj.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,live.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,live.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,livefilestore.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,llnwd.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,macid.co,QQ448829498   
+    - 'DOMAIN-SUFFIX,macromedia.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,macrumors.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,mashable.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,mathjax.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,medium.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,mega.co.nz,QQ448829498   
+    - 'DOMAIN-SUFFIX,mega.nz,QQ448829498   
+    - 'DOMAIN-SUFFIX,megaupload.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,microsofttranslator.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,mindnode.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,mobile01.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,modmyi.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,msedge.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,myfontastic.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,name.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,nextmedia.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,nsstatic.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,nssurge.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,nyt.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,nytimes.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,omnigroup.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,onedrive.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,onenote.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ooyala.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,openvpn.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,openwrt.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,orkut.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,osxdaily.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,outlook.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ow.ly,QQ448829498   
+    - 'DOMAIN-SUFFIX,paddleapi.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,parallels.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,parse.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,pdfexpert.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,periscope.tv,QQ448829498   
+    - 'DOMAIN-SUFFIX,pinboard.in,QQ448829498   
+    - 'DOMAIN-SUFFIX,pinterest.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,pixelmator.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,pixiv.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,playpcesor.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,playstation.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,playstation.com.hk,QQ448829498   
+    - 'DOMAIN-SUFFIX,playstation.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,playstationnetwork.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,pushwoosh.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,rime.im,QQ448829498   
+    - 'DOMAIN-SUFFIX,servebom.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,sfx.ms,QQ448829498   
+    - 'DOMAIN-SUFFIX,shadowsocks.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,sharethis.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,shazam.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,skype.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,smartdns好梯子：   .com,QQ448829498   
+    - 'DOMAIN-SUFFIX,smartmailcloud.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,sndcdn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,sony.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,soundcloud.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,sourceforge.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,spotify.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,squarespace.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,sstatic.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,st.luluku.pw,QQ448829498   
+    - 'DOMAIN-SUFFIX,stackoverflow.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,startpage.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,staticflickr.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,steamcommunity.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,symauth.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,symcb.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,symcd.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,tapbots.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,tapbots.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,tdesktop.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,techcrunch.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,techsmith.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,thepiratebay.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,theverge.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,time.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,timeinc.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,tiny.cc,QQ448829498   
+    - 'DOMAIN-SUFFIX,tinypic.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,tmblr.co,QQ448829498   
+    - 'DOMAIN-SUFFIX,todoist.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,trello.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,trustasiassl.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,tumblr.co,QQ448829498   
+    - 'DOMAIN-SUFFIX,tumblr.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,tweetdeck.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,tweetmarker.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,twitch.tv,QQ448829498   
+    - 'DOMAIN-SUFFIX,txmblr.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,typekit.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,ubertags.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ublock.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,ubnt.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ulyssesapp.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,urchin.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,usertrust.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,v.gd,QQ448829498   
+    - 'DOMAIN-SUFFIX,v2ex.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,vimeo.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,vimeocdn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,vine.co,QQ448829498   
+    - 'DOMAIN-SUFFIX,vivaldi.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,vox-cdn.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,vsco.co,QQ448829498   
+    - 'DOMAIN-SUFFIX,vultr.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,w.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,w3schools.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,webtype.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,wikiwand.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,wikileaks.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,wikimedia.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,wikipedia.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,wikipedia.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,windows.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,windows.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,wire.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,wordpress.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,workflowy.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,wp.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,wsj.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,wsj.net,QQ448829498   
+    - 'DOMAIN-SUFFIX,xda-developers.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,xeeno.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,xiti.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,yahoo.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,yimg.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,ying.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,yoyo.org,QQ448829498   
+    - 'DOMAIN-SUFFIX,ytimg.com,QQ448829498   
+    - 'DOMAIN-SUFFIX,telegra.ph,QQ448829498   
+    - 'DOMAIN-SUFFIX,telegram.org,QQ448829498   
     - 'IP-CIDR,91.108.4.0/22,QQ448829498：   ,no-resolve'
     - 'IP-CIDR,91.108.8.0/21,QQ448829498：   ,no-resolve'
     - 'IP-CIDR,91.108.16.0/22,QQ448829498：   ,no-resolve'
@@ -543,4 +543,4 @@ rules:
     - 'DOMAIN-SUFFIX,cn,DIRECT'
     - 'DOMAIN-KEYWORD,-cn,DIRECT'
     - 'GEOIP,CN,DIRECT'
-    - 'MATCH,QQ448829498：   '
+    - 'MATCH,QQ448829498   
