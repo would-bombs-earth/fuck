@@ -15,8 +15,8 @@ dns:
     fallback: ['https://doh-pure.onedns.net/dns-query', 'https://ada.openbld.net/dns-query', 'https://223.5.5.5/dns-query', 'https://223.6.6.6/dns-query']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - { name: '剩余流量：1000 GB', type: ss, server: meiall, port: 11, cipher: aes-128-gcm, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true }
-    - { name: '距离下次重置剩余：31 天', type: ss, server: meiall, port: 11, cipher: aes-128-gcm, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true }
+    - { name: '剩余流量：1GB', type: ss, server: meiall, port: 11, cipher: aes-128-gcm, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true }
+    - { name: '距离下次重置剩余：30days', type: ss, server: meiall, port: 11, cipher: aes-128-gcm, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true }
     - { name: 套餐到期：2025-08-21, type: ss, server: meiall, port: 11, cipher: aes-128-gcm, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true }
     - { name: '3', type: ss, server: meiall, port: 11, cipher: aes-128-gcm, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true }
     - { name: 1, type: ss, server: meiall, port: 11, cipher: aes-128-gcm, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true }
@@ -38,9 +38,9 @@ proxies:
     - { name: '澳大利亚 解锁 02', type: anytls, server: all.meiall.xyz, port: 13096, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true, sni: gateway.icloud.com, skip-cert-verify: true }
     - { name: '澳大利亚 解锁 03', type: anytls, server: all.meiall.xyz, port: 13096, password: 12368aae-bbe6-40c1-a1e6-ba221bc8a69e, udp: true, sni: gateway.icloud.com, skip-cert-verify: true }
 proxy-groups:
-    - { name: QQ448829498, type: select, proxies: [自动选择, 故障转移, '剩余流量：1000 GB', '距离下次重置剩余：31 天', 套餐到期：2025-08-21, '3', 1, 2, 4, '香港 解锁 01', '香港 解锁 02', '香港 解锁 03', '日本 解锁 01', '日本 解锁 02', '日本 解锁 03', '新加坡 解锁 01', '新加坡 解锁 02', '新加坡 解锁 03', '美国 解锁 01', '美国 解锁 02', '美国 解锁 03', '澳大利亚 解锁 01', '澳大利亚 解锁 02', '澳大利亚 解锁 03'] }
-    - { name: 自动选择, type: url-test, proxies: ['剩余流量：1000 GB', '距离下次重置剩余：31 天', 套餐到期：2025-08-21, '3', 1, 2, 4, '香港 解锁 01', '香港 解锁 02', '香港 解锁 03', '日本 解锁 01', '日本 解锁 02', '日本 解锁 03', '新加坡 解锁 01', '新加坡 解锁 02', '新加坡 解锁 03', '美国 解锁 01', '美国 解锁 02', '美国 解锁 03', '澳大利亚 解锁 01', '澳大利亚 解锁 02', '澳大利亚 解锁 03'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: 故障转移, type: fallback, proxies: ['剩余流量：1000 GB', '距离下次重置剩余：31 天', 套餐到期：2025-08-21, '3', 1, 2, 4, '香港 解锁 01', '香港 解锁 02', '香港 解锁 03', '日本 解锁 01', '日本 解锁 02', '日本 解锁 03', '新加坡 解锁 01', '新加坡 解锁 02', '新加坡 解锁 03', '美国 解锁 01', '美国 解锁 02', '美国 解锁 03', '澳大利亚 解锁 01', '澳大利亚 解锁 02', '澳大利亚 解锁 03'], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: QQ448829498, type: select, proxies: [自动选择, 故障转移, '剩余流量：1GB', '距离下次重置剩余：30days', 套餐到期：2025-08-21, '3', 1, 2, 4, '香港 解锁 01', '香港 解锁 02', '香港 解锁 03', '日本 解锁 01', '日本 解锁 02', '日本 解锁 03', '新加坡 解锁 01', '新加坡 解锁 02', '新加坡 解锁 03', '美国 解锁 01', '美国 解锁 02', '美国 解锁 03', '澳大利亚 解锁 01', '澳大利亚 解锁 02', '澳大利亚 解锁 03'] }
+    - { name: 自动选择, type: url-test, proxies: ['剩余流量：1GB', '距离下次重置剩余：30days', 套餐到期：2025-08-21, '3', 1, 2, 4, '香港 解锁 01', '香港 解锁 02', '香港 解锁 03', '日本 解锁 01', '日本 解锁 02', '日本 解锁 03', '新加坡 解锁 01', '新加坡 解锁 02', '新加坡 解锁 03', '美国 解锁 01', '美国 解锁 02', '美国 解锁 03', '澳大利亚 解锁 01', '澳大利亚 解锁 02', '澳大利亚 解锁 03'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 故障转移, type: fallback, proxies: ['剩余流量：1GB', '距离下次重置剩余：30days', 套餐到期：2025-08-21, '3', 1, 2, 4, '香港 解锁 01', '香港 解锁 02', '香港 解锁 03', '日本 解锁 01', '日本 解锁 02', '日本 解锁 03', '新加坡 解锁 01', '新加坡 解锁 02', '新加坡 解锁 03', '美国 解锁 01', '美国 解锁 02', '美国 解锁 03', '澳大利亚 解锁 01', '澳大利亚 解锁 02', '澳大利亚 解锁 03'], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
     - 'DOMAIN,s.meiall.xyz,DIRECT'
     - 'DOMAIN-SUFFIX,services.googleapis.cn,QQ448829498'
