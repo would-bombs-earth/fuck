@@ -1,55 +1,56 @@
-mixed-port: 7897
-allow-lan: true
+mixed-port: 7890
+allow-lan: false
 bind-address: '*'
 mode: rule
 log-level: info
 external-controller: '127.0.0.1:9090'
 unified-delay: true
-ipv6: false
-profile:
-    store-selected: true
-tun:
-    mtu: 1500
+tcp-concurrent: true
 dns:
     enable: true
     ipv6: false
-    listen: '127.0.0.1:5335'
-    use-hosts: false
-    default-nameserver: [223.5.5.5, 119.29.29.29]
+    default-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
-    fake-ip-filter: ['*.lan', time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, '*.ntp.org.cn', pool.ntp.org, ntp.aliyun.com, time1.aliyun.com, music.163.com, '*.music.163.com', y.qq.com, '*.y.qq.com', '*.weixin.qq.com', '*.alipay.com', '*.taobao.com', '*.jd.com']
-    nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query', 'https://cloudflare-dns.com/dns-query']
-    fallback: ['https://dns.google/dns-query', 'tls://8.8.4.4:853']
-    nameserver-policy: { 'geosite:cn': 'https://dns.alidns.com/dns-query', 'geosite:geolocation-!cn': 'https://cloudflare-dns.com/dns-query' }
-    fallback-filter: { geoip: true, geoip-code: CN, ipcidr: [240.0.0.0/4, 0.0.0.0/32, 127.0.0.1/32], domain: [+.google.com, +.googleapis.com, +.youtube.com, +.facebook.com, +.twitter.com, +.netflix.com, +.amazonaws.com, +.github.com, +.openai.com, +.zoom.us] }
-    proxy-server-nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query']
+    use-hosts: true
+    respect-rules: true
+    proxy-server-nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
+    nameserver: [223.5.5.5, 119.29.29.29, 114.114.114.114]
+    fallback: [1.1.1.1, 8.8.8.8]
+    fallback-filter: { geoip: true, geoip-code: CN, geosite: [gfw], ipcidr: [240.0.0.0/4], domain: [+.google.com, +.facebook.com, +.youtube.com] }
 proxies:
-    - { name: '剩余流量：990.08 GB', server: uuk1.tok8888.com, port: 21597, sni: uuk1.tok8888.com, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: '距离下次重置剩余：30 天', server: uuk1.tok8888.com, port: 21597, sni: uuk1.tok8888.com, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 套餐到期：2025-08-20, server: uuk1.tok8888.com, port: 21597, sni: uuk1.tok8888.com, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 美国1, server: uuk1.tok8888.com, port: 21597, sni: uuk1.tok8888.com, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 美国1-v, type: vless, server: uuk1v.tok8888.com, port: 8443, uuid: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: www.apple.com.cn, reality-opts: { public-key: 1jupCbzD9RB34YhWct4C6_I1bx_O5Ct7ZnT5dfCiV18, short-id: null }, client-fingerprint: edge }
-    - { name: 美国2, server: uuk2.tok8888.com, port: 25036, sni: uuk2.tok8888.com, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 美国2-v, type: vless, server: uuk2v.tok8888.com, port: 8443, uuid: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: businessmadesimple.com, reality-opts: { public-key: GcOtIhZbkznrBYohK7rvjV0oVoQvC4y38VIExs6KUwA, short-id: null }, client-fingerprint: safari }
-    - { name: 美国3, server: uuk3.tok8888.com, port: 23641, sni: uuk3.tok8888.com, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 美国3-v, type: vless, server: uuk3v.tok8888.com, port: 8443, uuid: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: www.thewilliamvale.com, reality-opts: { public-key: yDkCTYl7Ap0XeU9PNv_kBY9BwQrgYZPIov-MXvpf7R8, short-id: null }, client-fingerprint: safari }
-    - { name: 美国4-v, type: vless, server: uuk4v.tok8888.com, port: 8443, uuid: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: www.apple.com.cn, reality-opts: { public-key: yDkCTYl7Ap0XeU9PNv_kBY9BwQrgYZPIov-MXvpf7R8, short-id: null }, client-fingerprint: edge }
-    - { name: 美国5-v, type: vless, server: uuk5v.tok8888.com, port: 8443, uuid: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: www.apple.com.cn, reality-opts: { public-key: kHtBu5SWzLuz79nw0LkDkH4luWft_A-M6MNq4LA-RB4, short-id: null }, client-fingerprint: safari }
-    - { name: 美国6-v, type: vless, server: uuk6v.tok8888.com, port: 45445, uuid: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: www.webilop.com, reality-opts: { public-key: yDkCTYl7Ap0XeU9PNv_kBY9BwQrgYZPIov-MXvpf7R8, short-id: null }, client-fingerprint: edge }
-    - { name: 新加坡1, server: xjp1.gy6688.xyz, port: 23911, sni: xjp1.gy6688.xyz, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 澳大利亚, server: au1.gy6688.xyz, port: 24505, sni: au1.gy6688.xyz, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: cP2sbTFOTkuTq1sW }
-    - { name: 英国1, server: yg1.gy6688.xyz, port: 24883, sni: yg1.gy6688.xyz, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 荷兰1, server: hl1.gy6688.xyz, port: 25625, sni: hl1.gy6688.xyz, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 德国1, server: dg1.gy6688.xyz, port: 22189, sni: dg1.gy6688.xyz, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 加拿大1, server: jnd1.gy6688.xyz, port: 22133, sni: jnd1.gy6688.xyz, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
-    - { name: 印度1, server: yd1.gy6688.xyz, port: 21204, sni: yd1.gy6688.xyz, up: null, down: null, skip-cert-verify: true, ports: 21000-26000, type: hysteria2, password: 9a6b4cb6-d3eb-4068-8049-df29f10c606b, obfs: salamander, obfs-password: LNAnPYDfFyesRAVn }
+    - { name: '剩余流量：1000 GB', type: vless, server: aws-link1.liangxin1.xyz, port: 35248, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: www.lamer.com.hk, reality-opts: { public-key: IGsSxC0wgn7wLy0NM0QN_yOREDKT_814Y_3_rbgDoTc, short-id: c8c0f951 } }
+    - { name: 套餐到期：2025-09-10, type: vless, server: aws-link1.liangxin1.xyz, port: 35248, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: www.lamer.com.hk, reality-opts: { public-key: IGsSxC0wgn7wLy0NM0QN_yOREDKT_814Y_3_rbgDoTc, short-id: c8c0f951 } }
+    - { name: 🇭🇰香港高速01|BGP|流媒体, type: vless, server: aws-link1.liangxin1.xyz, port: 35248, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: www.lamer.com.hk, reality-opts: { public-key: IGsSxC0wgn7wLy0NM0QN_yOREDKT_814Y_3_rbgDoTc, short-id: c8c0f951 } }
+    - { name: 🇭🇰香港高速02|BGP|流媒体, type: vless, server: aws-link2.liangxin1.xyz, port: 32725, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: osxapps.itunes.apple.com, reality-opts: { public-key: IdgzmrHX6nbZEVjox3WcxBE07DwXE9YIa8ZyYZuMWEw, short-id: 784cf058 } }
+    - { name: 🇭🇰香港高速03|BGP|流媒体, type: vless, server: aws-link3.liangxin1.xyz, port: 24758, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: osxapps.itunes.apple.com, reality-opts: { public-key: o59R2PjAsu1h4KcFjK-EDGP41N2PHZL_Pgk64UcFxh0, short-id: a6d87a12 } }
+    - { name: 🇸🇬新加坡高速01|BGP|流媒体, type: vless, server: aws-link7.liangxin1.xyz, port: 48574, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: www.lamer.com.sg, reality-opts: { public-key: lmxSayN8tUg2Dag2MPXrdqZ2SQK9K3OjlaKk8wVCRnc, short-id: f8f18902 } }
+    - { name: 🇸🇬新加坡高速02|BGP|流媒体, type: vless, server: aws-link8.liangxin1.xyz, port: 39645, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: iosapps.itunes.apple.com, reality-opts: { public-key: x7VqpFP7_PrY4ebNw8hi8Ec5Tm5Upmt5JOdrN1M9VnQ, short-id: 2b3b0b93 } }
+    - { name: 🇸🇬新加坡高速03|BGP|流媒体, type: vless, server: aws-link9.liangxin1.xyz, port: 23587, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: iosapps.itunes.apple.com, reality-opts: { public-key: H66PLLf6HkZwHk4oFqisfTawIvw2cxkEwk8Ue8sHZgA, short-id: 19b580ae } }
+    - { name: 🇯🇵日本高速01|BGP|流媒体, type: vless, server: aws-link13.liangxin1.xyz, port: 36574, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: www.apple.com.cn, reality-opts: { public-key: sDG-KQk1BF7V83-xnmrWDouXxpPd_ZSxKcHrJJzbols, short-id: 32a3650d } }
+    - { name: 🇯🇵日本高速02|BGP|流媒体, type: vless, server: aws-link14.liangxin1.xyz, port: 25485, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: www.apple.com.cn, reality-opts: { public-key: VOFSjjWT0wIH3Q0ntyEZd8WwksrIAb5gPt_3PBnEASg, short-id: 9c5b8c53 } }
+    - { name: 🇯🇵日本高速03|BGP|流媒体, type: vless, server: aws-link15.liangxin1.xyz, port: 35457, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: www.apple.com.cn, reality-opts: { public-key: 3gb-aG6qLCJpEOFrEPZ9qKqLvVPA_ovlu0X1PvjcE0k, short-id: 05288db3 } }
+    - { name: 🇺🇸美国高速01|流媒体, type: vless, server: 129.146.46.191, port: 443, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: download-porter.hoyoverse.com, reality-opts: { public-key: QE5l0RUqs4OsH3j3u_xHm06-4NlILmQivZUJqiEx11o, short-id: '6314e825' } }
+    - { name: 🇰🇷韩国高速01|BGP|流媒体, type: vless, server: aws-link25.liangxin1.xyz, port: 34578, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: download-porter.hoyoverse.com, reality-opts: { public-key: PSn2s5TN4e7n0LkzPunu2IA1hSmOoPYFu3d_psl2Nmc, short-id: e534c8be } }
+    - { name: 🇰🇷韩国高速02|BGP|流媒体, type: vless, server: aws-link26.liangxin1.xyz, port: 36872, uuid: 7933c97b-dff1-4ba7-94b6-9658a8905624, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: download-porter.hoyoverse.com, reality-opts: { public-key: z53evg6ewSK3gb9bS4KWdgyYU74McOLiRdFqJNpubmQ, short-id: ab9a0409 } }
+    - { name: 🇭🇰香港专线02|BGP|流媒体, server: aws-linkhy2.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.tesla.cn, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇭🇰香港专线03|BGP|流媒体, server: aws-linkhy3.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.teslamotors.com, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇸🇬新加坡专线02|BGP|流媒体, server: aws-linkhy10.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.teslaautomation.de, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇸🇬新加坡专线03|BGP|流媒体, server: aws-linkhy11.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.teslaenergy.com, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇯🇵日本专线02|BGP|流媒体, server: aws-linkhy16.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.teslamotors.cn, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇯🇵日本专线03|BGP|流媒体, server: aws-linkhy17.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.apple.com.cn, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇰🇷韩国专线01|BGP|流媒体, server: aws-linkhy21.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.apple.com, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇰🇷韩国专线02|BGP|流媒体, server: aws-linkhy22.liangxin1.xyz, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.apple.com, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇺🇸美国01|流媒体, server: 132.226.117.48, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.apple.com, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇺🇸美国02|流媒体, server: 129.153.119.42, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.apple.com, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
+    - { name: 🇬🇧英国01|流媒体, server: 79.72.81.183, port: 30000, ports: 30000-50000, mport: 30000-50000, udp: true, skip-cert-verify: true, sni: www.apple.com, type: hysteria2, password: 7933c97b-dff1-4ba7-94b6-9658a8905624 }
 proxy-groups:
-    - { name: QQ448829498, type: select, proxies: [自动选择, 故障转移, '剩余流量：990.08 GB', '距离下次重置剩余：30 天', 套餐到期：2025-08-20, 美国1, 美国1-v, 美国2, 美国2-v, 美国3, 美国3-v, 美国4-v, 美国5-v, 美国6-v, 新加坡1, 澳大利亚, 英国1, 荷兰1, 德国1, 加拿大1, 印度1] }
-    - { name: 自动选择, type: url-test, proxies: ['剩余流量：990.08 GB', '距离下次重置剩余：30 天', 套餐到期：2025-08-20, 美国1, 美国1-v, 美国2, 美国2-v, 美国3, 美国3-v, 美国4-v, 美国5-v, 美国6-v, 新加坡1, 澳大利亚, 英国1, 荷兰1, 德国1, 加拿大1, 印度1], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: 故障转移, type: fallback, proxies: ['剩余流量：990.08 GB', '距离下次重置剩余：30 天', 套餐到期：2025-08-20, 美国1, 美国1-v, 美国2, 美国2-v, 美国3, 美国3-v, 美国4-v, 美国5-v, 美国6-v, 新加坡1, 澳大利亚, 英国1, 荷兰1, 德国1, 加拿大1, 印度1], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: QQ448829498, type: select, proxies: [自动选择, 故障转移, '剩余流量：1000 GB', 套餐到期：2025-09-10, 🇭🇰香港高速01|BGP|流媒体, 🇭🇰香港高速02|BGP|流媒体, 🇭🇰香港高速03|BGP|流媒体, 🇸🇬新加坡高速01|BGP|流媒体, 🇸🇬新加坡高速02|BGP|流媒体, 🇸🇬新加坡高速03|BGP|流媒体, 🇯🇵日本高速01|BGP|流媒体, 🇯🇵日本高速02|BGP|流媒体, 🇯🇵日本高速03|BGP|流媒体, 🇺🇸美国高速01|流媒体, 🇰🇷韩国高速01|BGP|流媒体, 🇰🇷韩国高速02|BGP|流媒体, 🇭🇰香港专线02|BGP|流媒体, 🇭🇰香港专线03|BGP|流媒体, 🇸🇬新加坡专线02|BGP|流媒体, 🇸🇬新加坡专线03|BGP|流媒体, 🇯🇵日本专线02|BGP|流媒体, 🇯🇵日本专线03|BGP|流媒体, 🇰🇷韩国专线01|BGP|流媒体, 🇰🇷韩国专线02|BGP|流媒体, 🇺🇸美国01|流媒体, 🇺🇸美国02|流媒体, 🇬🇧英国01|流媒体] }
+    - { name: 自动选择, type: url-test, proxies: ['剩余流量：1000 GB', 套餐到期：2025-09-10, 🇭🇰香港高速01|BGP|流媒体, 🇭🇰香港高速02|BGP|流媒体, 🇭🇰香港高速03|BGP|流媒体, 🇸🇬新加坡高速01|BGP|流媒体, 🇸🇬新加坡高速02|BGP|流媒体, 🇸🇬新加坡高速03|BGP|流媒体, 🇯🇵日本高速01|BGP|流媒体, 🇯🇵日本高速02|BGP|流媒体, 🇯🇵日本高速03|BGP|流媒体, 🇺🇸美国高速01|流媒体, 🇰🇷韩国高速01|BGP|流媒体, 🇰🇷韩国高速02|BGP|流媒体, 🇭🇰香港专线02|BGP|流媒体, 🇭🇰香港专线03|BGP|流媒体, 🇸🇬新加坡专线02|BGP|流媒体, 🇸🇬新加坡专线03|BGP|流媒体, 🇯🇵日本专线02|BGP|流媒体, 🇯🇵日本专线03|BGP|流媒体, 🇰🇷韩国专线01|BGP|流媒体, 🇰🇷韩国专线02|BGP|流媒体, 🇺🇸美国01|流媒体, 🇺🇸美国02|流媒体, 🇬🇧英国01|流媒体], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 故障转移, type: fallback, proxies: ['剩余流量：1000 GB', 套餐到期：2025-09-10, 🇭🇰香港高速01|BGP|流媒体, 🇭🇰香港高速02|BGP|流媒体, 🇭🇰香港高速03|BGP|流媒体, 🇸🇬新加坡高速01|BGP|流媒体, 🇸🇬新加坡高速02|BGP|流媒体, 🇸🇬新加坡高速03|BGP|流媒体, 🇯🇵日本高速01|BGP|流媒体, 🇯🇵日本高速02|BGP|流媒体, 🇯🇵日本高速03|BGP|流媒体, 🇺🇸美国高速01|流媒体, 🇰🇷韩国高速01|BGP|流媒体, 🇰🇷韩国高速02|BGP|流媒体, 🇭🇰香港专线02|BGP|流媒体, 🇭🇰香港专线03|BGP|流媒体, 🇸🇬新加坡专线02|BGP|流媒体, 🇸🇬新加坡专线03|BGP|流媒体, 🇯🇵日本专线02|BGP|流媒体, 🇯🇵日本专线03|BGP|流媒体, 🇰🇷韩国专线01|BGP|流媒体, 🇰🇷韩国专线02|BGP|流媒体, 🇺🇸美国01|流媒体, 🇺🇸美国02|流媒体, 🇬🇧英国01|流媒体], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
-    - 'DOMAIN,wanmeiwl3.xyz,DIRECT'
+    - 'IP-CIDR,1.1.1.1/32,QQ448829498,no-resolve'
+    - 'IP-CIDR,8.8.8.8/32,QQ448829498,no-resolve'
     - 'DOMAIN-SUFFIX,services.googleapis.cn,QQ448829498'
     - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,QQ448829498'
     - 'DOMAIN,safebrowsing.urlsec.qq.com,DIRECT'
@@ -84,6 +85,7 @@ rules:
     - 'DOMAIN-SUFFIX,apple.com,DIRECT'
     - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
     - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
+    - 'DOMAIN,cn.bing.com,DIRECT'
     - 'DOMAIN-SUFFIX,126.com,DIRECT'
     - 'DOMAIN-SUFFIX,126.net,DIRECT'
     - 'DOMAIN-SUFFIX,127.net,DIRECT'
@@ -442,7 +444,7 @@ rules:
     - 'DOMAIN-SUFFIX,sharethis.com,QQ448829498'
     - 'DOMAIN-SUFFIX,shazam.com,QQ448829498'
     - 'DOMAIN-SUFFIX,skype.com,QQ448829498'
-    - 'DOMAIN-SUFFIX,smartdns公益网络.com.com,QQ448829498'
+    - 'DOMAIN-SUFFIX,smartdnsQQ448829498.com,QQ448829498'
     - 'DOMAIN-SUFFIX,smartmailcloud.com,QQ448829498'
     - 'DOMAIN-SUFFIX,sndcdn.com,QQ448829498'
     - 'DOMAIN-SUFFIX,sony.com,QQ448829498'
